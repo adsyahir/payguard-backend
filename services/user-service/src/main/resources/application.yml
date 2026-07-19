@@ -1,0 +1,8 @@
+dotenv:
+  directory: ../..          # load the shared .env at payguard-backend/ root (run from this service folder)
+
+spring:
+  application:
+    name: user-service       # = config filename = eureka id
+  config:
+    import: optional:configserver:${CONFIG_SERVER_URI:http://localhost:8888}
