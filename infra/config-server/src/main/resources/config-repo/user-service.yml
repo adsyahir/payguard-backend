@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    url: ${USER_DB_URL:jdbc:postgresql://localhost:5432/userdb}
-    username: ${USER_DB_USER:payguard}
-    password: ${USER_DB_PASS:payguard}
+    url: ${USER_DB_URL:jdbc:postgresql://localhost:5433/payguard_user}
+    username: ${USER_DB_USER:postgres}
+    password: ${USER_DB_PASS:postgres}
   jpa:
     hibernate:
       ddl-auto: ${JPA_DDL_AUTO:validate}

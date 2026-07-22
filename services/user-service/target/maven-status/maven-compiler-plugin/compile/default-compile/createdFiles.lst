@@ -1,0 +1,12 @@
+com/example/user_service/model/Role.class
+com/example/user_service/model/Permission.class
+com/example/user_service/dao/PermissionRepo.class
+com/example/user_service/UserServiceApplication.class
+com/example/user_service/dao/RefreshTokenRepo.class
+com/example/user_service/model/User.class
+com/example/user_service/model/Merchant.class
+com/example/user_service/dao/RoleRepo.class
+com/example/user_service/dao/MerchantRepo.class
+com/example/user_service/dao/UserRepo.class
+com/example/user_service/enums/RoleName.class
+com/example/user_service/model/RefreshToken.class

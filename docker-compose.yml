@@ -9,16 +9,16 @@ services:
     image: postgres:16
     container_name: payguard-postgres
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-payguard}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-payguard}
-      POSTGRES_DB: payguard          # bootstrap db; per-service DBs created by init script
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      # no POSTGRES_DB — defaults to "postgres"; per-service DBs created by the init script
     ports:
-      - "5432:5432"
+      - "5433:5432"        # host 5433 -> container 5432
     volumes:
       - ./infra/postgres-init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
       - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-payguard}"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres}"]
       interval: 5s
       timeout: 3s
       retries: 10
